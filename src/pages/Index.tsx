@@ -25,7 +25,7 @@ export default function Index() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-lg border-b border-primary/20' : 'bg-transparent'}`}>
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-primary">SERGEEVICH</h1>
+            <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent bg-200 animate-gradient-shift">SERGEEVICH</h1>
             <div className="hidden md:flex gap-8">
               {['Главная', 'О мне', 'Портфолио', 'Услуги', 'Контакты'].map((item, idx) => (
                 <button
@@ -46,6 +46,13 @@ export default function Index() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5"></div>
+          
+          <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/30 rounded-lg animate-spin-slow shadow-[0_0_30px_rgba(14,165,233,0.3)]" style={{ transform: 'rotate(45deg)' }}></div>
+          <div className="absolute top-40 right-20 w-40 h-40 border-2 border-secondary/30 rounded-full animate-float shadow-[0_0_40px_rgba(139,92,246,0.3)]" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-32 left-1/4 w-24 h-24 border-2 border-accent/30 rotate-12 animate-float shadow-[0_0_25px_rgba(217,70,239,0.3)]" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 right-1/3 w-36 h-36 border-2 border-primary/20 rounded-lg animate-spin-slow shadow-[0_0_35px_rgba(14,165,233,0.2)]" style={{ animationDelay: '0.5s', animationDirection: 'reverse' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-20 h-20 border-2 border-secondary/40 rounded-full animate-float shadow-[0_0_20px_rgba(139,92,246,0.4)]" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-28 h-28 border-2 border-accent/25 rotate-45 animate-spin-slow shadow-[0_0_30px_rgba(217,70,239,0.25)]" style={{ animationDelay: '3s' }}></div>
         </div>
         
         <div className="relative z-20 text-center px-6 animate-fade-in">
