@@ -7,6 +7,7 @@ import Icon from '@/components/ui/icon';
 
 export default function Index() {
   const [scrolled, setScrolled] = useState(false);
+  const [musicPlaying, setMusicPlaying] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +25,54 @@ export default function Index() {
     delay: Math.random() * 5
   }));
 
+  const lights = Array.from({ length: 30 }, (_, i) => ({
+    id: i,
+    left: `${(i / 29) * 100}%`,
+    delay: Math.random() * 2
+  }));
+
+  const toggleMusic = () => {
+    const audio = document.getElementById('bgMusic') as HTMLAudioElement;
+    if (audio) {
+      if (musicPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+      setMusicPlaying(!musicPlaying);
+    }
+  };
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2021/11/23/audio_5fa19bef4d.mp3" type="audio/mpeg" />
+      </audio>
+      
+      <button
+        onClick={toggleMusic}
+        className="fixed top-20 right-6 z-50 w-12 h-12 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center hover:bg-primary/30 transition-all duration-300 shadow-[0_0_20px_rgba(14,165,233,0.5)]"
+        title={musicPlaying ? 'Остановить музыку' : 'Включить музыку'}
+      >
+        <Icon name={musicPlaying ? 'Volume2' : 'VolumeX'} size={20} className="text-primary" />
+      </button>
+
+      <div className="fixed top-0 left-0 w-full h-4 z-40 flex justify-between px-4">
+        {lights.map((light) => (
+          <div
+            key={light.id}
+            className="w-3 h-3 rounded-full animate-color-shift shadow-[0_0_10px_currentColor]"
+            style={{
+              animationDelay: `${light.delay}s`
+            }}
+          />
+        ))}
+      </div>
+
       {snowflakes.map((flake) => (
         <div
           key={flake.id}
@@ -69,14 +112,12 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5"></div>
           
-          <div className="absolute top-20 left-10 text-6xl animate-float opacity-30">🎄</div>
-          <div className="absolute top-40 right-20 text-7xl animate-spin-slow opacity-40" style={{ animationDelay: '1s' }}>⭐</div>
-          <div className="absolute bottom-32 left-1/4 text-5xl animate-float opacity-30" style={{ animationDelay: '2s' }}>🎁</div>
-          <div className="absolute bottom-20 right-1/3 text-6xl animate-float opacity-35" style={{ animationDelay: '0.5s' }}>❄️</div>
-          <div className="absolute top-1/2 left-1/2 text-5xl animate-spin-slow opacity-40" style={{ animationDelay: '1.5s' }}>⛄</div>
-          <div className="absolute top-1/3 right-1/4 text-6xl animate-float opacity-30" style={{ animationDelay: '3s' }}>🎅</div>
-          <div className="absolute bottom-40 left-20 text-7xl animate-float opacity-25" style={{ animationDelay: '4s' }}>🔔</div>
-          <div className="absolute top-60 right-40 text-5xl animate-spin-slow opacity-35" style={{ animationDelay: '2.5s' }}>🌟</div>
+          <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/30 rounded-lg animate-spin-slow shadow-[0_0_30px_rgba(14,165,233,0.3)]" style={{ transform: 'rotate(45deg)' }}></div>
+          <div className="absolute top-40 right-20 w-40 h-40 border-2 border-secondary/30 rounded-full animate-float shadow-[0_0_40px_rgba(139,92,246,0.3)]" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-32 left-1/4 w-24 h-24 border-2 border-accent/30 rotate-12 animate-float shadow-[0_0_25px_rgba(217,70,239,0.3)]" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 right-1/3 w-36 h-36 border-2 border-primary/20 rounded-lg animate-spin-slow shadow-[0_0_35px_rgba(14,165,233,0.2)]" style={{ animationDelay: '0.5s', animationDirection: 'reverse' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-20 h-20 border-2 border-secondary/40 rounded-full animate-float shadow-[0_0_20px_rgba(139,92,246,0.4)]" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-28 h-28 border-2 border-accent/25 rotate-45 animate-spin-slow shadow-[0_0_30px_rgba(217,70,239,0.25)]" style={{ animationDelay: '3s' }}></div>
           
           <div className="absolute top-10 left-0 w-48 h-24 bg-primary/10 rounded-full blur-3xl animate-cloud-move" style={{ animationDelay: '0s' }}></div>
           <div className="absolute top-32 left-0 w-64 h-32 bg-secondary/10 rounded-full blur-3xl animate-cloud-move" style={{ animationDelay: '5s' }}></div>
