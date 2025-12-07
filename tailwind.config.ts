@@ -134,6 +134,15 @@ export default {
 					'25%': { backgroundColor: 'hsl(271, 91%, 65%)' },
 					'50%': { backgroundColor: 'hsl(328, 86%, 70%)' },
 					'75%': { backgroundColor: 'hsl(60, 100%, 60%)' }
+				},
+				'confetti': {
+					'0%': { transform: 'translateY(0) rotate(0deg)', opacity: '1' },
+					'100%': { transform: 'translateY(-20px) rotate(360deg)', opacity: '0' }
+				},
+				'vapor-rise': {
+					'0%': { transform: 'translateY(100%) scale(0.8)', opacity: '0' },
+					'50%': { opacity: '0.6' },
+					'100%': { transform: 'translateY(-100%) scale(1.2)', opacity: '0' }
 				}
 			},
 			animation: {
@@ -148,7 +157,9 @@ export default {
 				'snowfall': 'snowfall 10s linear infinite',
 				'ice-shimmer': 'ice-shimmer 2s ease-in-out infinite',
 				'blink': 'blink 1s ease-in-out infinite',
-				'color-shift': 'color-shift 3s ease-in-out infinite'
+				'color-shift': 'color-shift 3s ease-in-out infinite',
+				'confetti': 'confetti 1s ease-out',
+				'vapor-rise': 'vapor-rise 8s ease-out infinite'
 			},
 			backgroundSize: {
 				'200': '200% 200%'

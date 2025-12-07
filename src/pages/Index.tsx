@@ -155,7 +155,21 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="о-мне" className="py-24 px-6">
+      <section id="о-мне" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-secondary/5 to-transparent pointer-events-none"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-16 h-16 bg-primary/5 rounded-full blur-xl animate-vapor-rise"
+            style={{
+              left: `${Math.random() * 100}%`,
+              bottom: '0',
+              animationDelay: `${Math.random() * 5}s`
+            }}
+          />
+        ))}
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
             Обо мне
@@ -192,7 +206,21 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="портфолио" className="py-24 px-6 bg-card/30">
+      <section id="портфолио" className="py-24 px-6 bg-card/30 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-accent/5 to-transparent pointer-events-none"></div>
+        <div className="absolute top-40 right-20 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-spin-slow"></div>
+        <div className="absolute bottom-40 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float"></div>
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-20 h-20 bg-secondary/5 rounded-full blur-2xl animate-vapor-rise"
+            style={{
+              left: `${Math.random() * 100}%`,
+              bottom: '0',
+              animationDelay: `${Math.random() * 6}s`
+            }}
+          />
+        ))}
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
             Портфолио
@@ -208,7 +236,7 @@ export default function Index() {
             ].map((item, idx) => (
               <Card 
                 key={idx}
-                className="group overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] cursor-pointer animate-fade-in"
+                className="group overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] cursor-pointer animate-fade-in relative"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <div className="aspect-square bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 relative overflow-hidden">
@@ -216,6 +244,10 @@ export default function Index() {
                     <Icon name={item.icon as any} size={80} className="text-primary/30 group-hover:text-primary/50 transition-colors duration-300 group-hover:scale-110 transform transition-transform" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute top-2 left-2 text-2xl opacity-0 group-hover:opacity-100 group-hover:animate-confetti">✨</div>
+                  <div className="absolute top-2 right-2 text-2xl opacity-0 group-hover:opacity-100 group-hover:animate-confetti" style={{ animationDelay: '0.1s' }}>❄️</div>
+                  <div className="absolute bottom-2 left-2 text-2xl opacity-0 group-hover:opacity-100 group-hover:animate-confetti" style={{ animationDelay: '0.2s' }}>🎄</div>
+                  <div className="absolute bottom-2 right-2 text-2xl opacity-0 group-hover:opacity-100 group-hover:animate-confetti" style={{ animationDelay: '0.3s' }}>⭐</div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
@@ -227,7 +259,21 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="услуги" className="py-24 px-6">
+      <section id="услуги" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-primary/5 to-transparent pointer-events-none"></div>
+        <div className="absolute top-32 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-32 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-spin-slow"></div>
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-24 h-24 bg-accent/5 rounded-full blur-2xl animate-vapor-rise"
+            style={{
+              left: `${Math.random() * 100}%`,
+              bottom: '0',
+              animationDelay: `${Math.random() * 4}s`
+            }}
+          />
+        ))}
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">
             Услуги
@@ -272,7 +318,21 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="контакты" className="py-24 px-6 bg-card/30">
+      <section id="контакты" className="py-24 px-6 bg-card/30 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-secondary/10 to-transparent pointer-events-none"></div>
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-spin-slow"></div>
+        {Array.from({ length: 15 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-20 h-20 bg-primary/5 rounded-full blur-xl animate-vapor-rise"
+            style={{
+              left: `${Math.random() * 100}%`,
+              bottom: '0',
+              animationDelay: `${Math.random() * 7}s`
+            }}
+          />
+        ))}
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
             Контакты
@@ -308,22 +368,42 @@ export default function Index() {
               </div>
             </div>
 
-            <Card className="p-8 border-primary/20 animate-fade-in">
-              <form className="space-y-6">
+            <Card className="p-8 border-primary/20 animate-fade-in relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-shift bg-200"></div>
+              <div className="absolute -top-4 -right-4 text-6xl opacity-20 animate-spin-slow">❄️</div>
+              <div className="absolute -bottom-4 -left-4 text-5xl opacity-20 animate-float">🎄</div>
+              
+              <h3 className="text-2xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+                ✨ Напишите нам ✨
+              </h3>
+              
+              <form className="space-y-6 relative z-10">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Имя</label>
-                  <Input placeholder="Ваше имя" className="bg-background border-primary/30 focus:border-primary" />
+                  <label className="block text-sm font-medium mb-2 flex items-center gap-2">
+                    <Icon name="User" size={16} className="text-primary" />
+                    Имя
+                  </label>
+                  <Input placeholder="Ваше имя" className="bg-background border-primary/30 focus:border-primary focus:shadow-[0_0_15px_rgba(14,165,233,0.3)] transition-all" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <Input type="email" placeholder="your@email.com" className="bg-background border-primary/30 focus:border-primary" />
+                  <label className="block text-sm font-medium mb-2 flex items-center gap-2">
+                    <Icon name="Mail" size={16} className="text-secondary" />
+                    Email
+                  </label>
+                  <Input type="email" placeholder="your@email.com" className="bg-background border-secondary/30 focus:border-secondary focus:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Сообщение</label>
-                  <Textarea placeholder="Расскажите о вашем проекте..." rows={4} className="bg-background border-primary/30 focus:border-primary" />
+                  <label className="block text-sm font-medium mb-2 flex items-center gap-2">
+                    <Icon name="MessageSquare" size={16} className="text-accent" />
+                    Сообщение
+                  </label>
+                  <Textarea placeholder="Расскажите о вашем проекте..." rows={4} className="bg-background border-accent/30 focus:border-accent focus:shadow-[0_0_15px_rgba(217,70,239,0.3)] transition-all" />
                 </div>
-                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 shadow-[0_0_20px_rgba(14,165,233,0.4)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] transition-all duration-300">
-                  Отправить
+                <Button className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:from-primary/80 hover:via-secondary/80 hover:to-accent/80 shadow-[0_0_20px_rgba(14,165,233,0.4)] hover:shadow-[0_0_40px_rgba(139,92,246,0.8)] transition-all duration-300 group">
+                  <span className="flex items-center justify-center gap-2">
+                    Отправить
+                    <Icon name="Send" size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </Button>
               </form>
             </Card>
