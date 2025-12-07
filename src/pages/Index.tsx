@@ -45,13 +45,15 @@ export default function Index() {
       <section id="главная" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
-          <iframe
-            className="w-full h-full object-cover scale-150"
-            src="https://www.youtube.com/embed/0fhoIate4qI?autoplay=1&mute=1&loop=1&playlist=0fhoIate4qI&controls=0&showinfo=0&rel=0&modestbranding=1"
-            title="3D Background"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          ></iframe>
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="https://cdn.coverr.co/videos/coverr-abstract-3d-geometric-shapes-7127/1080p.mp4" type="video/mp4" />
+          </video>
         </div>
         
         <div className="relative z-20 text-center px-6 animate-fade-in">
