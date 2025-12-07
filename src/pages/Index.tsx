@@ -25,7 +25,7 @@ export default function Index() {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-lg border-b border-primary/20' : 'bg-transparent'}`}>
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-primary animate-glow">SERGEEVICH</h1>
+            <h1 className="text-2xl font-bold text-primary">SERGEEVICH</h1>
             <div className="hidden md:flex gap-8">
               {['Главная', 'О мне', 'Портфолио', 'Услуги', 'Контакты'].map((item, idx) => (
                 <button
@@ -45,15 +45,7 @@ export default function Index() {
       <section id="главная" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src="https://cdn.coverr.co/videos/coverr-abstract-3d-geometric-shapes-7127/1080p.mp4" type="video/mp4" />
-          </video>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5"></div>
         </div>
         
         <div className="relative z-20 text-center px-6 animate-fade-in">
@@ -114,7 +106,7 @@ export default function Index() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 p-1 animate-glow">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 p-1">
                 <div className="w-full h-full rounded-2xl bg-card flex items-center justify-center">
                   <Icon name="Box" size={120} className="text-primary opacity-50" />
                 </div>
