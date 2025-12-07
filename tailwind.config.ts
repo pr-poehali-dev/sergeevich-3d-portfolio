@@ -101,6 +101,15 @@ export default {
 				'spin-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
+				},
+				'drift': {
+					'0%': { transform: 'translateX(0) translateY(0)', opacity: '0.3' },
+					'50%': { opacity: '0.6' },
+					'100%': { transform: 'translateX(100px) translateY(-100px)', opacity: '0' }
+				},
+				'cloud-move': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100vw)' }
 				}
 			},
 			animation: {
@@ -109,7 +118,9 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'gradient-shift': 'gradient-shift 3s ease infinite',
-				'spin-slow': 'spin-slow 20s linear infinite'
+				'spin-slow': 'spin-slow 20s linear infinite',
+				'drift': 'drift 8s ease-out infinite',
+				'cloud-move': 'cloud-move 30s linear infinite'
 			},
 			backgroundSize: {
 				'200': '200% 200%'

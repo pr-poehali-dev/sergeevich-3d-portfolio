@@ -53,10 +53,19 @@ export default function Index() {
           <div className="absolute bottom-20 right-1/3 w-36 h-36 border-2 border-primary/20 rounded-lg animate-spin-slow shadow-[0_0_35px_rgba(14,165,233,0.2)]" style={{ animationDelay: '0.5s', animationDirection: 'reverse' }}></div>
           <div className="absolute top-1/2 left-1/2 w-20 h-20 border-2 border-secondary/40 rounded-full animate-float shadow-[0_0_20px_rgba(139,92,246,0.4)]" style={{ animationDelay: '1.5s' }}></div>
           <div className="absolute top-1/3 right-1/4 w-28 h-28 border-2 border-accent/25 rotate-45 animate-spin-slow shadow-[0_0_30px_rgba(217,70,239,0.25)]" style={{ animationDelay: '3s' }}></div>
+          
+          <div className="absolute top-10 left-0 w-48 h-24 bg-primary/5 rounded-full blur-2xl animate-cloud-move" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute top-32 left-0 w-64 h-32 bg-secondary/5 rounded-full blur-3xl animate-cloud-move" style={{ animationDelay: '5s' }}></div>
+          <div className="absolute top-56 left-0 w-56 h-28 bg-accent/5 rounded-full blur-2xl animate-cloud-move" style={{ animationDelay: '10s' }}></div>
+          
+          <div className="absolute bottom-40 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-drift" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute bottom-60 right-20 w-40 h-40 bg-secondary/10 rounded-full blur-3xl animate-drift" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-32 left-1/3 w-36 h-36 bg-accent/10 rounded-full blur-3xl animate-drift" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute bottom-52 right-1/4 w-28 h-28 bg-primary/8 rounded-full blur-2xl animate-drift" style={{ animationDelay: '6s' }}></div>
         </div>
         
         <div className="relative z-20 text-center px-6 animate-fade-in">
-          <h2 className="text-6xl md:text-8xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
+          <h2 className="text-6xl md:text-8xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent bg-200 animate-gradient-shift drop-shadow-[0_0_30px_rgba(14,165,233,0.5)]">
             SERGEEVICH
           </h2>
           <p className="text-xl md:text-3xl mb-8 text-foreground/90 font-light tracking-wide">
