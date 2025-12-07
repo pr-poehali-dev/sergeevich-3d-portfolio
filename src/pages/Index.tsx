@@ -156,7 +156,7 @@ export default function Index() {
       </section>
 
       <section id="о-мне" className="py-24 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-secondary/5 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-secondary/5 pointer-events-none"></div>
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
         {Array.from({ length: 10 }).map((_, i) => (
@@ -206,8 +206,8 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="портфолио" className="py-24 px-6 bg-card/30 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-accent/5 to-transparent pointer-events-none"></div>
+      <section id="портфолио" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/5 via-accent/5 to-primary/5 pointer-events-none"></div>
         <div className="absolute top-40 right-20 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-spin-slow"></div>
         <div className="absolute bottom-40 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float"></div>
         {Array.from({ length: 12 }).map((_, i) => (
@@ -260,7 +260,7 @@ export default function Index() {
       </section>
 
       <section id="услуги" className="py-24 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-primary/5 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-accent/5 to-secondary/5 pointer-events-none"></div>
         <div className="absolute top-32 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-32 right-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-spin-slow"></div>
         {Array.from({ length: 8 }).map((_, i) => (
@@ -318,8 +318,8 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="контакты" className="py-24 px-6 bg-card/30 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-secondary/10 to-transparent pointer-events-none"></div>
+      <section id="контакты" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/5 via-primary/5 to-accent/5 pointer-events-none"></div>
         <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-spin-slow"></div>
         {Array.from({ length: 15 }).map((_, i) => (
