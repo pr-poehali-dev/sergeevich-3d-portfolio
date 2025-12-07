@@ -16,12 +16,34 @@ export default function Index() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const snowflakes = Array.from({ length: 50 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    size: Math.random() * 10 + 5,
+    duration: Math.random() * 10 + 10,
+    delay: Math.random() * 5
+  }));
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {snowflakes.map((flake) => (
+        <div
+          key={flake.id}
+          className="absolute text-primary/60 animate-snowfall pointer-events-none z-50"
+          style={{
+            left: flake.left,
+            fontSize: `${flake.size}px`,
+            animationDuration: `${flake.duration}s`,
+            animationDelay: `${flake.delay}s`
+          }}
+        >
+          ❄
+        </div>
+      ))}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-lg border-b border-primary/20' : 'bg-transparent'}`}>
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -47,29 +69,26 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5"></div>
           
-          <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary/30 rounded-lg animate-spin-slow shadow-[0_0_30px_rgba(14,165,233,0.3)]" style={{ transform: 'rotate(45deg)' }}></div>
-          <div className="absolute top-40 right-20 w-40 h-40 border-2 border-secondary/30 rounded-full animate-float shadow-[0_0_40px_rgba(139,92,246,0.3)]" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-32 left-1/4 w-24 h-24 border-2 border-accent/30 rotate-12 animate-float shadow-[0_0_25px_rgba(217,70,239,0.3)]" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-20 right-1/3 w-36 h-36 border-2 border-primary/20 rounded-lg animate-spin-slow shadow-[0_0_35px_rgba(14,165,233,0.2)]" style={{ animationDelay: '0.5s', animationDirection: 'reverse' }}></div>
-          <div className="absolute top-1/2 left-1/2 w-20 h-20 border-2 border-secondary/40 rounded-full animate-float shadow-[0_0_20px_rgba(139,92,246,0.4)]" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-1/3 right-1/4 w-28 h-28 border-2 border-accent/25 rotate-45 animate-spin-slow shadow-[0_0_30px_rgba(217,70,239,0.25)]" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-20 left-10 text-6xl animate-float opacity-30">🎄</div>
+          <div className="absolute top-40 right-20 text-7xl animate-spin-slow opacity-40" style={{ animationDelay: '1s' }}>⭐</div>
+          <div className="absolute bottom-32 left-1/4 text-5xl animate-float opacity-30" style={{ animationDelay: '2s' }}>🎁</div>
+          <div className="absolute bottom-20 right-1/3 text-6xl animate-float opacity-35" style={{ animationDelay: '0.5s' }}>❄️</div>
+          <div className="absolute top-1/2 left-1/2 text-5xl animate-spin-slow opacity-40" style={{ animationDelay: '1.5s' }}>⛄</div>
+          <div className="absolute top-1/3 right-1/4 text-6xl animate-float opacity-30" style={{ animationDelay: '3s' }}>🎅</div>
+          <div className="absolute bottom-40 left-20 text-7xl animate-float opacity-25" style={{ animationDelay: '4s' }}>🔔</div>
+          <div className="absolute top-60 right-40 text-5xl animate-spin-slow opacity-35" style={{ animationDelay: '2.5s' }}>🌟</div>
           
-          <div className="absolute top-10 left-0 w-48 h-24 bg-primary/5 rounded-full blur-2xl animate-cloud-move" style={{ animationDelay: '0s' }}></div>
-          <div className="absolute top-32 left-0 w-64 h-32 bg-secondary/5 rounded-full blur-3xl animate-cloud-move" style={{ animationDelay: '5s' }}></div>
-          <div className="absolute top-56 left-0 w-56 h-28 bg-accent/5 rounded-full blur-2xl animate-cloud-move" style={{ animationDelay: '10s' }}></div>
-          
-          <div className="absolute bottom-40 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-drift" style={{ animationDelay: '0s' }}></div>
-          <div className="absolute bottom-60 right-20 w-40 h-40 bg-secondary/10 rounded-full blur-3xl animate-drift" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-32 left-1/3 w-36 h-36 bg-accent/10 rounded-full blur-3xl animate-drift" style={{ animationDelay: '4s' }}></div>
-          <div className="absolute bottom-52 right-1/4 w-28 h-28 bg-primary/8 rounded-full blur-2xl animate-drift" style={{ animationDelay: '6s' }}></div>
+          <div className="absolute top-10 left-0 w-48 h-24 bg-primary/10 rounded-full blur-3xl animate-cloud-move" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute top-32 left-0 w-64 h-32 bg-secondary/10 rounded-full blur-3xl animate-cloud-move" style={{ animationDelay: '5s' }}></div>
+          <div className="absolute top-56 left-0 w-56 h-28 bg-accent/10 rounded-full blur-3xl animate-cloud-move" style={{ animationDelay: '10s' }}></div>
         </div>
         
         <div className="relative z-20 text-center px-6 animate-fade-in">
-          <h2 className="text-6xl md:text-8xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent bg-200 animate-gradient-shift drop-shadow-[0_0_30px_rgba(14,165,233,0.5)]">
+          <h2 className="text-6xl md:text-8xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-b from-primary via-secondary to-accent animate-ice-shimmer" style={{ WebkitTextStroke: '2px rgba(100, 220, 255, 0.3)' }}>
             SERGEEVICH
           </h2>
-          <p className="text-xl md:text-3xl mb-8 text-foreground/90 font-light tracking-wide">
-            3D Моделлер & Визуализация
+          <p className="text-xl md:text-3xl mb-8 text-primary/90 font-light tracking-wide flex items-center justify-center gap-2">
+            ❄️ 3D Моделлер & Визуализация ❄️
           </p>
           <div className="flex gap-4 justify-center">
             <Button 

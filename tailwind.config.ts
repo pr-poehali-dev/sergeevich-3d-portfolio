@@ -110,6 +110,20 @@ export default {
 				'cloud-move': {
 					'0%': { transform: 'translateX(-100%)' },
 					'100%': { transform: 'translateX(100vw)' }
+				},
+				'snowfall': {
+					'0%': { transform: 'translateY(-10vh) rotate(0deg)', opacity: '1' },
+					'100%': { transform: 'translateY(110vh) rotate(360deg)', opacity: '0.3' }
+				},
+				'ice-shimmer': {
+					'0%, 100%': { 
+						textShadow: '0 0 10px rgba(100, 220, 255, 0.8), 0 0 20px rgba(100, 220, 255, 0.6), 0 0 30px rgba(100, 220, 255, 0.4)',
+						filter: 'brightness(1)'
+					},
+					'50%': { 
+						textShadow: '0 0 20px rgba(150, 240, 255, 1), 0 0 40px rgba(150, 240, 255, 0.8), 0 0 60px rgba(150, 240, 255, 0.6)',
+						filter: 'brightness(1.2)'
+					}
 				}
 			},
 			animation: {
@@ -120,7 +134,9 @@ export default {
 				'gradient-shift': 'gradient-shift 3s ease infinite',
 				'spin-slow': 'spin-slow 20s linear infinite',
 				'drift': 'drift 8s ease-out infinite',
-				'cloud-move': 'cloud-move 30s linear infinite'
+				'cloud-move': 'cloud-move 30s linear infinite',
+				'snowfall': 'snowfall 10s linear infinite',
+				'ice-shimmer': 'ice-shimmer 2s ease-in-out infinite'
 			},
 			backgroundSize: {
 				'200': '200% 200%'
